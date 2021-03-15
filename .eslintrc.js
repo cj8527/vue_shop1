@@ -11,6 +11,13 @@ module.exports = {
         parser: 'babel-eslint'
     },
     rules: {
+     
+            "generator-star-spacing": "off",
+            "no-tabs":"off",
+            "no-unused-vars":"off",
+            "no-console":"off",
+            "no-irregular-whitespace":"off",
+            "no-debugger": "off",       
         'space-before-Function-paren':0,
         "no-irregular-whitespace": "off",
         "indent": ["off", 2],
