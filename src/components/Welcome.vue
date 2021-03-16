@@ -1,4 +1,4 @@
- <template>  
+ <template>
  <div>
    <h3>Welcome</h3>
  </div>
@@ -8,5 +8,4 @@
  }
  </script>
  <style lang="less" scoped>
- 
- </style>
+</style>

@@ -102,7 +102,8 @@ export default {
           label: 'authName'
         },
         defKeys: [],
-        roleId: ''
+        roleId: '',
+        editDialogVisible: false
     }
   },
   created () {
@@ -129,7 +130,7 @@ const { data: res } = await this.$http.get('roles/' + id) // eslint-disable-line
       editUserInfo () {
   this.$refs.editFormRef.validate(async valid => {
  if (!valid) return
- const { data: res } = await this.$http.put('roles/' + this.editForm.id, this.editForm) // eslint-disable-line no-unused-vars
+ const { data: res } = await this.$http.put('roles/' + this.editForm.roleId, this.editForm) // eslint-disable-line no-unused-vars
  if (res.meta.status !== 200) { return this.$message.error('添加失败！') }
  this.$message.success('添加成功！')
    this.editDialogVisible = false
