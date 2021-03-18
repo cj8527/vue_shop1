@@ -13,25 +13,6 @@
                      @click="showAddDialogVisible">添加分类</el-button>
         </el-col>
       </el-row>
-      <!-- <el-table :data="rightsList" stripe border >
-  <el-table-column type="index"></el-table-column>
-  <el-table-column label="分类名称" prop="cat_name"></el-table-column>
-  <el-table-column label="是否有效" prop="path">1</el-table-column>
-   <el-table-column label="排序" prop="cat_level">
-            <template slot-scope="scope">
-<el-tag v-if="scope.row.cat_level == 0">一级</el-tag>
-<el-tag type="success" v-if="scope.row.cat_level == 1">二级</el-tag>
-<el-tag type="warning" v-if="scope.row.cat_level == 2">三级</el-tag>
-       </template>
-   </el-table-column>
- <el-table-column label="操作" >
-     <template  slot-scope="scope">
-   <el-button type="primary"  icon="el-icon-edit" @click="showSetRightDialog(scope.row)"> 编辑
-   </el-button>
-   <el-button type="danger"  icon="el-icon-delete" >删除</el-button>
-    </template>
-  </el-table-column>
-</el-table> -->
       <tree-table :data="rightsList"
                   :columns="columns"
                   :selection-type='false'
@@ -90,7 +71,7 @@
 >
   <el-form :model="addCateForm" :rules="addCateFormRules" ref="addCateFormRef" label-width="100px"
   >
-  <el-form-item label="c" prop="cate_name">
+  <el-form-item label="添加分类" prop="cate_name">
     <el-input v-model="addCateForm.cat_name" ></el-input>
   </el-form-item>
     <el-form-item label="父级分类：">
