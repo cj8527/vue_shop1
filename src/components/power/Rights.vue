@@ -16,7 +16,6 @@
 <el-tag type="success" v-if="scope.row.level == 1">二级</el-tag>
 <el-tag type="warning" v-if="scope.row.level == 2">三级</el-tag>
        </template>
-
   </el-table-column>
 </el-table>
 </el-card>

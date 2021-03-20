@@ -162,6 +162,7 @@ export default {
      const { data: res } = await this.$http.get('users', { params: this.queryInfo })
      if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
      this.userlist = res.data.users
+     console.log(this.userlist)
      this.total = res.data.total
     },
     handleSizeChange (newSize) {

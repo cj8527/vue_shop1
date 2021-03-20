@@ -169,10 +169,17 @@ export default {
       async tabClicked () {
         console.log(this.selectedKeys[2])
 if (this.activeIndex === '1') {
-    const { data: res } = await this.$http.get(`categories/${this.selectedKeys[2]}/attributes`, { params: { sel: 'many' } }) // eslint-disable-line no-unused-vars
-      // if (res.meta.status !== 200) { return this.$message.error('res.meta.msg') }
-      this.manyTableData = res.data
-      console.log(res.data)
+    // const { data: res } = await this.$http.get(`categories/${this.selectedKeys[2]}/attributes`, { params: { sel: 'many' } }) // eslint-disable-line no-unused-vars
+    //   // if (res.meta.status !== 200) { return this.$message.error('res.meta.msg') }
+    //   this.manyTableData = res.data
+    //   console.log(res.data)
+
+      const { data: res } = await this.$http.get(
+          `categories/${this.selectedKeys[2]}/attributes`,
+          {
+            params: { sel: 'many' }
+          }
+        )
 }
       },
       handlePreview (file) {
@@ -211,13 +218,14 @@ const form = _.clonDeep(this.addForm)
         })
         form.attrs = this.addForm.attrs
         console.log(form)
-})
- const { data: res } = await this.$http.post('/goods', Form) // eslint-disable-line no-unused-vars
+
+ const { data: res } = await this.$http.post('/goods', form) // eslint-disable-line no-unused-vars
  if (res.meta.status !== 201) { return this.$message.error('添加失败！') }
  this.$message.success('添加成功！')
  this.$router.push('/goods')
-      }
-}
+      })
+ }
+  }
 }
 </script>
 <style lang="less" scoped>
